@@ -1,10 +1,11 @@
-Στο συγκεκριμένο directory έχουμε τα αρχεία που παράξαμε κατά τη διαδικασία testing με το postman. Στη συνέχεια θα εξηγήσουμε αναλυτικότερα και τα tests που δημιουργήσαμε για να δούμε την απόδοση της εφαρμογής cli καθώς αλληλεπιδρά με το API. Οπότε κάνοντας την παραδοχή πως ξεκινάμε με τη βάση δεδομένων να μην περιέχει κάποιο δεδομένο, πραγματοποιούμε τις ακόλουθες ενέργειες:
 
-* Η συνάρτηση test_healthcheck() πραγματοποιεί έλεγχο συνδεσιμότητας μεταξύ της βάσης δεδομένων και του API χρησιμοποιώντας την εφαρμογή CLI.
-* Η συνάρτηση test_upd0_faulty() πραγματοποιεί έλεγχο σχετικά με το αποτέλεσμα υποβολής ενός λανθασμένου ερωτηματολογίου μέσω της εφαρμογής CLI.
-* Οι συναρτήσεις test_upd0() και test_upd1() πραγματοποιούν τον έλεγχο υποβολής δύο ερωτηματολογίων στη βάση δεδομένων μέσω της εφαρμογής CLI.
-* Η συνάρτηση test_doanswer() πραγματοποιεί έλεγχο κατά την υποβολή μιας απάντησης σε καθένα από τα προηγούμενα ερωτηματολόγια μέσω του εφαρμογής CLI.
-* Οι συναρτήσεις test_questionnaire(), test_question(), test_getsessionanswers(), test_getquestionanswers() ελέγχουν αν επιστρέφεται το κατάλληλο JSON μέσω της εφααρμογής CLI.
-* Οι συνάρτηση test_resetq() πραγματοποιεί έλεγχο κατά την διαγραφή των μιας εκ των δύο απαντήσεων του ερωτηματολογιού που πραγματοποιήσαμε νωρίτερα, χρησιμοποιώντας την εφαρμογή CLI.
-* Η συνάρτηση test_402() ελέγχει αν εμφανίζεται το κατάλληλο error code όταν ζητείται να επιστραφεί η απάντηση που διεγράφη στο προηγούμενο βήμα με χρήση της εφαρμογής CLI.
-* Η συνάρτηση test_resetall() ελέγχει αν διαγράφονται όλες οι απαντήσεις και οι ερωτήσεις από τη βάση δεδομένων, με χρήση της εφαρμογής CLI.
+In the specific directory, we have the files generated during the testing process using Postman. Subsequently, we will provide a detailed explanation of the tests created to assess the performance of the CLI application as it interacts with the API. Assuming that we start with the database containing no data, we perform the following actions:
+
+* The function test_healthcheck() checks the connectivity between the database and the API using the CLI application.
+* The function test_upd0_faulty() checks the result of submitting a faulty questionnaire through the CLI application.
+* The functions test_upd0() and test_upd1() verify the submission of two questionnaires to the database using the CLI application.
+* The function test_doanswer() checks the submission of an answer to each of the previous questionnaires via the CLI application.
+* The functions test_questionnaire(), test_question(), test_getsessionanswers(), and test_getquestionanswers() ensure that the appropriate JSON is returned through the CLI application.
+* The function test_resetq() checks the deletion of one of the two answers to the questionnaire performed earlier using the CLI application.
+* The function test_402() verifies if the correct error code is displayed when requesting the answer deleted in the previous step using the CLI application.
+* The function test_resetall() checks if all answers and questions are deleted from the database using the CLI application.
