@@ -1,32 +1,31 @@
-<p align="justify">Στο παρόν directory (./api-backend), έχουμε δημιουργήσει το API, με βάση τις προδιαγραφές της εκφώνησης που μας δόθηκε, σε συνδυασμό με κάποια επιπλεόν endpoints, που θεωρήσαμε πως θα είναι χρήσιμα. Στη συνέχεια θα εξηγήσουμε επιγραμματικά κάποιες λεπτομέρειες για βασικά αρχεία: </p> 
+<p align="justify">In the current directory (./api-backend), we have created the API based on the specifications provided in the assignment, along with some additional endpoints that we deemed useful. Below, we will provide a brief explanation of key files:</p>
 
-* <p align="justify">Πιο συγκεκριμένα, το αρχείο index.js, με βάση το dbURI συνδέει το API, με τη βάση δεδομένων και στη συνέχεια διαθέτει τη θύρα 4000, για την παροχή των υπηρεσιών που προσφέρει το API. Ακόμα λαμβάνονται τα data, που περιέχονται στο αίτημα και στη συνέχεια αποστέλλονται ("/intelliq_api"), στο αρχείο api.js.</p> 
+* <p align="justify">Specifically, the file index.js, based on the dbURI, connects the API to the database and then listens on port 4000 to provide the services offered by the API. The data contained in the request are then sent ("/intelliq_api") to the api.js file.</p>
 
-* <p align="justify">Το αρχείο api.js, ανάλογα με το endpoint προς το οποίο πραγματοποιείται αίτημα, χρησιμοποιεί και την κατάλληλη μέθοδο του αρχείου controllers.js, στο directory controllers.</p> 
+* <p align="justify">The file api.js, depending on the endpoint requested, uses the corresponding method from the controllers.js file in the controllers directory.</p>
 
-* <p align="justify">Επιπλέον, μέσα στο directory με ονομασία models, περιέχονται οι ορισμοί των Schemas που θα χρησιμοποιηθούν, κατα την μεταφορά data από και προς τη βάση δέδομενων.</p>
+* <p align="justify">Additionally, within the models directory, the definitions of the Schemas to be used during the transfer of data to and from the database are located.</p>
 
-* <p align="justify">Στη συνέχεια, θα εξηγήσουμε λίγο πιο αναλυτικά, τις επιμέρους συναρτήσεις στο αρχείο controllers.js :</p>
+* <p align="justify">Next, we will explain in more detail the individual functions in the controllers.js file:</p>
 
-      1. Η σταθερά (συνάρτηση) post_questionnaire αναλαμβάνει να κάνει upload κάποιο ερωτηματολόγιο στη βάση (δημιουργεί ένα νέο document).
+      1. The constant (function) post_questionnaire is responsible for uploading a questionnaire to the database (creating a new document).
       
-      2. Η σταθερά (συνάρτηση) get_healtcheck ελέγχει τη συνδεσιμότητα του API με τη βάση δεδομένων.
+      2. The constant (function) get_healthcheck checks the connectivity of the API with the database.
       
-      3. Η σταθερά (συνάρτηση) resetall αποσκοπεί στη διαγραφή όλων των απαντήσεων και ερωτήσεων στη βάση.
+      3. The constant (function) resetall aims to delete all answers and questions in the database.
       
-      4. Η σταθερά (συνάρτηση) addAnswer κάνει upload, την απάντηση μιας ερώτησης (δημιουργεί ένα νέο document).
+      4. The constant (function) addAnswer uploads the answer to a question (creates a new document).
       
-      5. Η σταθερά (συνάρτηση) resetq αναλαμβάνει τη διαγραφή των απαντήσεων ένος συγκεκριμένου ερωτηματολογίου.
+      5. The constant (function) resetq is responsible for deleting the answers of a specific questionnaire.
       
-      6. Η σταθερά (συνάρτηση) get_questionnaire αναλαμβάνει την επιστροφή όλων των ερωτήσεων ενός συγκεκριμένου questionnaireID (μαζί με κάποιες πληροφορίες για την κάθε ερώτηση όπως qID, qtext, required, type).
+      6. The constant (function) get_questionnaire returns all questions of a specific questionnaireID (along with some information for each question such as qID, qtext, required, type).
       
-      7. Η σταθερά (συνάρτηση) get_options χρησιμοποιώντας aggregation που αναπτύξαμε στο MongoDBCompass μετασχηματίζει ένα ερωτηματολόγιο ως προς μια ερώτησή του έτσι ώστε να επιστραφούν δεδομένα σχετικά με τα options της συγκεκριμένης ερώτησης.
+      7. The constant (function) get_options, using an aggregation developed in MongoDB Compass, transforms a questionnaire with respect to one of its questions so that data related to the options of that specific question is returned.
       
-      8. Η σταθερά (συνάρτηση) get_session_answers χρησιμοποιώντας aggregation επιστρέφει όλες τις απαντήσεις (και τ' αντίστοιχα αναγνωριστικά ερωτήσεων) που δόθηκαν σ' ένα συγκεκριμένο ερωτηματολόγιο και session.
+      8. The constant (function) get_session_answers, using aggregation, returns all answers (and corresponding question IDs) given in a specific questionnaire and session.
       
-      9. Η σταθερά (συνάρτηση) get_question_answers χρησιμοποιώντας aggragation επιστρέφει όλες τις απαντήσεις (και τ' αντίστοιχα sessions) που δόθηκαν σ' ένα συγκεκριμένο ερωτηματολόγιο και ερώτηση.
+      9. The constant (function) get_question_answers, using aggregation, returns all answers (and corresponding sessions) given in a specific questionnaire and question.
       
-      10. Η σταθερά (συνάρτηση) get_all_questionnaire επιστρέφει όλα τα ερωτηματολόγια που υπάρχουν στη βάση δεδομένων.
+      10. The constant (function) get_all_questionnaire returns all questionnaires present in the database.
       
-      11. Η σταθερά (συνάρτηση) get_all_question επιστρέφει όλες τις απαντήσεις που βρίσκονται αποθηκευμένες στη βάση δεδομένων.
-      
+      11. The constant (function) get_all_question returns all answers stored in the database.</p>
