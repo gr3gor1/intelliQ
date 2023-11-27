@@ -9,19 +9,14 @@ Group: softeng2022-30 <br>
 Members: el18016, el18163, el18152, (Grigoris Papanikolaou - el18649)
 
 
-## 📜 Διατύπωση ζητουμένου 
-Το αντικείμενο της εργασίας είναι η ανάπτυξη μιας εφαρμογής λογισμικού για τη διαμόρφωση και
-εκτέλεση "έξυπνων ερωτηματολογίων", την οποία ας ονομάσουμε "intelliQ". Η εφαρμογή intelliQ θα
-χρησιμοποιείται για τη συγκέντρωση δεδομένων από τέτοια ερωτηματολόγια σε διάφορες έρευνες.
-Η εργασία περιλαμβάνει την αναγνώριση και προδιαγραφή των απαιτήσεων, την αρχιτεκτονική και
-λεπτομερή σχεδίαση, την υλοποίηση επιλεγμένων λειτουργιών, τον έλεγχο και, ασφαλώς, την
-τεκμηρίωση όλων αυτών.
+## 📜 Request Formulation
+The goal of the project is the development of a software application for the configuration and execution of "smart questionnaires," which we will refer to as "intelliQ." The intelliQ application will be used to gather data from such questionnaires in various surveys. The work includes the identification and specification of requirements, architecture, detailed design, implementation of selected functionalities, testing, and, of course, documentation of all these aspects.
 
-## ⚙️ Τεχνικές απαιτήσεις - εργαλεία
-• **GitHub** ως περιβάλλον διαχείρισης κώδικα και διαχείρισης έργου <br>
-• **Visual Paradigm** ως εργαλείο παραγωγής διαγραμμάτων UML <br>
-• **Υλοποίηση κώδικα:** Python, javascript με nodejs/express <br>
-• **Διαχείριση δεδομένων:** MongoDB <br>
+## ⚙️ Technical Requirements - Tools
+• **GitHub** as a code and project management environment <br>
+• **Visual Paradigm** as a tool for producing UML diagrams <br>
+• **Code Implementation:** Python, JavaScript with Node.js/Express <br>
+• **Data Management:** MongoDB <br>
 • **Frontend:** React
 
 
